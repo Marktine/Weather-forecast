@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css'/>
+    <script src= "/bootstrap/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/headerStyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/registerModal.css">
+</head>
+<body>
+  <% include templates/header.ejs %>
+  <div class="jumbotron">
+    <div class="page-header">
+        <h1><%= title %></h1>
+    </div>
+    <p>Weather Forecast</p>
+</div>
+<div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Welcome <strong><%= name %></strong>
+</div>
+<div class="container-fluid">
+    <div class="col-sm-12">
+        <div class="row jumbotron"><h2>The weather today at <%= info.name %> </h2></div>
+        <div class="col-sm-6">
+            <ul style="list-style: none;">
+            <% info.weather.forEach(function(item){ %>
+            <li>ID: <%= item.id %></li>
+            <li>Main weather: <%= item.main %></li>
+            <li>Description: <%= item.description %></li>
+            <li><img src="<%= 'http://openweathermap.org/img/w/' + item.icon + '.png'%>" alt="Weather icon"></li>
+            <% }); %>
+            </ul>
+    </div>
+    <div col-sm-6>
+        <p>Temperature information: </p>
+        <ul>
+            <li>Temperature: <%= info.main.temp %>°C</li>
+            <li>Pressure: <%= info.main.pressure %> <i>P</i></li>
+            <li>Humidity: <%= info.main.humidity %></li>
+            <li>Min temperature: <%= info.main.temp_min %>°C</li>
+            <li>Max temperature: <%= info.main.temp_max %>°C</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<div class="col-sm-12 footer">
+    <% include templates/footer.ejs %>
+</div>
+</body>
+</html>

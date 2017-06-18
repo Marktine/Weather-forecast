@@ -1,0 +1,27 @@
+.jumbotron{
+	text-align: center;
+	color: white;
+	background-color: #7c2e2e;
+}
+
+.page-header{
+	border:0;
+}
+
+.container-fluid .col-sm-12 {
+	border: 0.5px solid black; 
+	border-top: 5px solid black; 
+	background: #f7f2cd; 
+	border-radius: 5px;
+	
+}
+
+.row.jumbotron{
+	text-align: center; 
+	border-bottom: 0.2px solid black; 
+	background: url('http://1.bp.blogspot.com/--NLFAq5jq-I/Ud_6CTY_X4I/AAAAAAAAFJc/jwub8BXqSgE/s1600/Sai-gon-khong-nguoi_01.jpg') no-repeat center right; 
+	background-size: cover; 
+	color: #efefff; 
+	border-radius: 0px;
+	font-family: 'Roboto', sans-serif;
+}
